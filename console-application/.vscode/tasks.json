@@ -1,0 +1,31 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": [
+                // delete and create folder structure
+                // "ssh pi@192.168.0.101 'rm -rf /home/pi/projects/console-application && mkdir /home/pi/projects/console-application && mkdir /home/pi/projects/console/console-application/build'",
+                "rsync -r -a -v -e ssh --delete --exclude '.vscode' /mnt/d/Users/mauri/Documents/Work/Projects/_TEMP/vscode-arm-cpp-toolchain/console-application/ pi@192.168.0.102:/home/pi/projects/console-application/",
+                "&&",
+                "ssh pi@192.168.0.102",
+                "'mkdir /home/pi/projects/console-application/build",
+                "&& cd /home/pi/projects/console-application/build",
+                "&& cmake .. && make'"
+                // "&& ./apps/console-application/console-application'"
+                // "&& gdbserver :9090 ./apps/console-application/console-application'"               
+            ]
+        },
+        {
+            "label": "start_gdbserver",
+            "type": "shell",
+            "command": [
+                "ssh pi@192.168.0.102 'cd /home/pi/projects/console-application/build",
+                "&& gdbserver :9090 ./apps/console-application/console-application'"
+            ]
+        }
+    ]
+}

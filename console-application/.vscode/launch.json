@@ -1,0 +1,22 @@
+{
+    // Usare IntelliSense per informazioni sui possibili attributi.
+    // Al passaggio del mouse vengono visualizzate le descrizioni degli attributi esistenti.
+    // Per ulteriori informazioni, visitare: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "gdb",
+            "request": "attach",
+            "name": "Attach to gdbserver",
+            "executable": "console-application",
+            "target": "192.168.0.102:9090",
+            "remote": true,
+            "cwd": "${workspaceFolder}/apps/console-application",
+            "gdbpath": "arm-none-eabi-gdb.exe",
+            "autorun": [
+                // "set substitute-path /root ."
+            ]
+            // "preLaunchTask": "start_gdbserver"
+        }
+    ]
+}

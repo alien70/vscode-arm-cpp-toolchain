@@ -4,19 +4,21 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "echo",
+            "type": "shell",
+            "command":"echo ${workspaceFolder}"
+        },
+        {
             "label": "build",
             "type": "shell",
-            "command": [
-                // delete and create folder structure
-                // "ssh pi@192.168.0.101 'rm -rf /home/pi/projects/console-application && mkdir /home/pi/projects/console-application && mkdir /home/pi/projects/console/console-application/build'",
-                "rsync -r -a -v -e ssh --delete --exclude '.vscode' /mnt/d/Users/mauri/Documents/Work/Projects/_TEMP/vscode-arm-cpp-toolchain/console-application/ pi@192.168.0.102:/home/pi/projects/console-application/",
+            "command": [                
+                "rsync -r -a -v -e ssh --delete --exclude '.vscode' ${workspaceFolder}/ pi@192.168.0.102:/home/pi/projects/console-application/",
                 "&&",
                 "ssh pi@192.168.0.102",
-                "'mkdir /home/pi/projects/console-application/build",
+                "'rm -rf /home/pi/projects/console-application/build",
+                "&& mkdir /home/pi/projects/console-application/build",
                 "&& cd /home/pi/projects/console-application/build",
                 "&& cmake .. && make'"
-                // "&& ./apps/console-application/console-application'"
-                // "&& gdbserver :9090 ./apps/console-application/console-application'"               
             ]
         }
     ]

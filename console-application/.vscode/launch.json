@@ -18,6 +18,14 @@
                     "user": "pi",
                 }
             },
+            "osx": {
+                "ssh": {
+                    "host": "192.168.0.102",
+                    "cwd": "/home/pi/projects/console-application",
+                    "keyfile": "/Users/maurizioattanasi/.ssh/id_rsa",
+                    "user": "pi",
+                }       
+            },
             "preLaunchTask": "build"
         }
     ]

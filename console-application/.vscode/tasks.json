@@ -18,14 +18,6 @@
                 // "&& ./apps/console-application/console-application'"
                 // "&& gdbserver :9090 ./apps/console-application/console-application'"               
             ]
-        },
-        {
-            "label": "start_gdbserver",
-            "type": "shell",
-            "command": [
-                "ssh pi@192.168.0.102 'cd /home/pi/projects/console-application/build",
-                "&& gdbserver :9090 ./apps/console-application/console-application'"
-            ]
         }
     ]
 }

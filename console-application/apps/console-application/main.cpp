@@ -8,7 +8,7 @@ int main()
     int i = 0;
 
     i++;
-    string outText = "Hi all";
+    string outText = "Hi all,";
     cout << outText << endl;
 
     i++;
@@ -24,7 +24,11 @@ int main()
     cout << outText << endl;
 
     i++;
-    outText = "with Visual Studio Code";
+    outText = "with Visual Studio Code.";
+    cout << outText << endl;
+
+    i++;
+    outText = "Enjoy";
     cout << outText << endl;
 
     return 0;

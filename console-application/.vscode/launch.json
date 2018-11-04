@@ -6,17 +6,19 @@
     "configurations": [
         {
             "type": "gdb",
-            "request": "attach",
-            "name": "Attach to gdbserver",
-            "executable": "console-application",
-            "target": "192.168.0.102:9090",
-            "remote": true,
-            "cwd": "${workspaceFolder}/apps/console-application",
-            "gdbpath": "arm-none-eabi-gdb.exe",
-            "autorun": [
-                // "set substitute-path /root ."
-            ]
-            // "preLaunchTask": "start_gdbserver"
+            "request": "launch",
+            "name": "Launch Program (SSH)",
+            "target": "./build/apps/console-application/console-application",
+            "cwd": "${workspaceRoot}",
+            "windows": {
+                "ssh": {
+                    "host": "192.168.0.102",
+                    "cwd": "/home/pi/projects/console-application",
+                    "keyfile": "C:\\Users\\mauri\\.ssh\\id_rsa",
+                    "user": "pi",
+                }
+            },
+            "preLaunchTask": "build"
         }
     ]
 }

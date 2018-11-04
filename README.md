@@ -51,12 +51,9 @@ Reading the build output shown in Figure 4, the steps taken by the *`full fledge
 3. *Validating architecture*;
 4. *Starting remote build*;
 5. *Compiling sources: main.cpp*;
+6. *Start a debug session of the program running on the remote target*;
 
 Omitting the first step, the following are the ones that we will try to reproduce with **`Visual Studio Code`** &copy;
-
-## Cross Compile
-
-First thing first we have to compile our project for the target architecure, in our case ARM, on our development pc.
 
 ## Sources copy
 
@@ -83,3 +80,4 @@ So the thing VS2017 does is copying all the necessary files to the remote target
 pi@NanoPi-M1-Plus:~$
 ```
 
+We know that for that purpose, the IDE uses the previously configured *`ssh`* connection with the target. For that result we can u

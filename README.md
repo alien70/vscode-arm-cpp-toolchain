@@ -27,7 +27,7 @@ and click on the **`Add`** button
 
 ![Figure 3 - Connect to Remote](./images/vs-2017-conn-mgr-conn.png)
 
-and fill it with the ssh coordinates of the target client. Now we're ready, let's build our simple project and see what appens.
+and fill it with the ssh coordinates of the target client. Now we're ready, let's build our simple project and see what happens.
 
 ![Figure 4 - Build Output](/images/vs-2017-build-output.png)
 

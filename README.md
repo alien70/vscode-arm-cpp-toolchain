@@ -184,6 +184,6 @@ First of all, from the debug launch dropdown menu
 
 In the following video, available on my [YouTube Channel](https://www.youtube.com/channel/UCaEsggT05SZOLrAWcMXL7ig?view_as=public), there is a short demo of the *`toolchain`* in action.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/fJe8YJ9XTUg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![Watch the video](http://img.youtube.com/vi/fJe8YJ9XTUg/0.jpg)](https://youtu.be/fJe8YJ9XTUg)
 
 Enjoy

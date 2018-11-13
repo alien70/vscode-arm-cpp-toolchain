@@ -9,6 +9,9 @@
     - [Release mode](#release-mode)
     - [Let's sum up](#let's-sum-up)
 - [Source copy](#sources-copy)
+- [Build project](#build-project)
+- [Debug](#debug)
+- [Demo](#demo)
 
 ## How Visual Studio 2017 does
 

@@ -12,7 +12,7 @@
             "cwd": "${workspaceRoot}",
             "windows": {
                 "ssh": {
-                    "host": "192.168.1.2",
+                    "host": "192.168.0.103",
                     "cwd": "/home/pi/projects/console-application",
                     "keyfile": "C:\\Users\\mauri\\.ssh\\id_rsa",
                     "user": "pi",
@@ -20,7 +20,7 @@
             },
             "osx": {
                 "ssh": {
-                    "host": "192.168.1.2",
+                    "host": "192.168.0.103",
                     "cwd": "/home/pi/projects/console-application",
                     "keyfile": "/Users/maurizioattanasi/.ssh/id_rsa",
                     "user": "pi",
@@ -28,7 +28,7 @@
             },
             "linux": {
                 "ssh": {
-                    "host": "192.168.1.2",
+                    "host": "192.168.0.103",
                     "cwd": "/home/pi/projects/console-application",
                     "keyfile": "/Users/maurizioattanasi/.ssh/id_rsa",
                     "user": "pi",

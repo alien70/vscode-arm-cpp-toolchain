@@ -1,6 +1,6 @@
 # Set Up C++ ARM Development Toolchain with Visual Studio Code
 
-**`<TLDR></TLDR>`** TThe final goal of this series of notes is to simulate remote debugging of **`Microsoft Visual Studio 2017`** &copy; on a Linux target computer (ie a tiny ARM computer, such as a **`Raspberry Pi`** &copy; or a **`FriendlyARM NanoPi M1 Plus`** &copy;), but using **`Microsoft Visual Studio Code`** &copy;. First of all, let's see what we need to achieve the desired goal. 
+**`<TLDR></TLDR>`** The final goal of this series of notes is to simulate remote debugging of **`Microsoft Visual Studio 2017`** &copy; on a Linux target computer (e.g. a tiny ARM computer, such as a **`Raspberry Pi`** &copy; or a **`FriendlyARM NanoPi M1 Plus`** &copy;), but using **`Microsoft Visual Studio Code`** &copy;. First of all, let's see what we need to achieve the desired goal. 
 
 ## Index
 
@@ -180,3 +180,10 @@ First of all, from the debug launch dropdown menu
 }
 ```
 
+## Demo
+
+In the following video, available on my [YouTube Channel](https://www.youtube.com/channel/UCaEsggT05SZOLrAWcMXL7ig?view_as=public), there is a short demo of the *`toolchain`* in action.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fJe8YJ9XTUg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Enjoy

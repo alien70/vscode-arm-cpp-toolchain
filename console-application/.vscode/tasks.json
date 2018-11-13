@@ -14,9 +14,9 @@
             "command": [
                 // delete and create folder structure
                 // "ssh pi@192.168.0.101 'rm -rf /home/pi/projects/console-application && mkdir /home/pi/projects/console-application && mkdir /home/pi/projects/console/console-application/build'",
-                "rsync -r -a -v -e ssh --delete --exclude '.vscode' /mnt/d/Users/mauri/Documents/Work/Projects/_TEMP/vscode-arm-cpp-toolchain/console-application/ pi@192.168.1.2:/home/pi/projects/console-application/",
+                "rsync -r -a -v -e ssh --delete --exclude '.vscode' ${workspaceFolder}/ pi@192.168.0.103:/home/pi/projects/console-application/",
                 "&&",
-                "ssh pi@192.168.1.2",
+                "ssh pi@192.168.0.103",
                 "'mkdir /home/pi/projects/console-application/build",
                 "&& cd /home/pi/projects/console-application/build",
                 "&& cmake .. && make'"

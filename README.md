@@ -1,6 +1,6 @@
 # Set Up C++ ARM Development Toolchain with Visual Studio Code
 
-**`<TLDR></TLDR>`** The final goal of this series of notes is to simulate remote debugging of **`Microsoft Visual Studio 2017`** &copy; on a Linux target computer (e.g. a tiny ARM computer, such as a **`Raspberry Pi`** &copy; or a **`FriendlyARM NanoPi M1 Plus`** &copy;), but using **`Microsoft Visual Studio Code`** &copy;. First of all, let's see what we need to achieve the desired goal. 
+**`<TLDR></TLDR>`** The final goal this note is to simulate remote debugging of **`Microsoft Visual Studio 2017`** &copy; on a Linux target computer (e.g. a tiny ARM computer, such as a **`Raspberry Pi`** &copy; or a **`FriendlyARM NanoPi M1 Plus`** &copy;), but using **`Microsoft Visual Studio Code`** &copy;.
 
 ## Index
 
@@ -95,7 +95,7 @@ We know that for that purpose, the IDE uses the previously configured *`ssh`* co
             "label": "build",
             "type": "shell",
             "command": [
-                "rsync -r -a -v -e ssh --delete --exclude '.vscode' /mnt/d/Users/mauri/Documents/Work/Projects/_TEMP/vscode-arm-cpp-toolchain/console-application/ pi@192.168.0.102:/home/pi/projects/console-application/"
+                "rsync -r -a -v -e ssh --delete --exclude '.vscode' $ {workspaceFolder}/ pi@192.168.0.102:/home/pi/projects/console-application/"
                 ]
         }
     ]

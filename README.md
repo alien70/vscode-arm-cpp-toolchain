@@ -80,4 +80,103 @@ So the thing VS2017 does is copying all the necessary files to the remote target
 pi@NanoPi-M1-Plus:~$
 ```
 
-We know that for that purpose, the IDE uses the previously configured *`ssh`* connection with the target. For that result we can u
+We know that for that purpose, the IDE uses the previously configured *`ssh`* connection with the target. For that result we can use the same ssh connection to issue a *`rsync`* command, through a *`VSCode Task`*,
+
+``` json
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": [
+                "rsync -r -a -v -e ssh --delete --exclude '.vscode' /mnt/d/Users/mauri/Documents/Work/Projects/_TEMP/vscode-arm-cpp-toolchain/console-application/ pi@192.168.0.102:/home/pi/projects/console-application/"
+                ]
+        }
+    ]
+}
+```
+
+## Build project
+
+With the same tecnique above we can also create the necessary folder structure and build our simple project
+
+``` json
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": [
+
+                ...
+
+                "&&",
+                "ssh pi@192.168.0.102",
+                "'mkdir /home/pi/projects/console-application/build",
+                "&& cd /home/pi/projects/console-application/build",
+                "&& cmake .. && make'"
+            ]
+        }
+    ]
+}
+```
+
+## Debug
+
+Last but not least we need a proper way to debug remotely our application. For that purpose we'll configure a debug session using the VSCode C++ debugger features.
+
+![add-debug-config](./images/add-debug-config.png)
+
+First of all, from the debug launch dropdown menu 
+
+![launch-over-ssh](./images/launch-over-ssh.png)
+
+``` json
+{
+    // Usare IntelliSense per informazioni sui possibili attributi.
+    // Al passaggio del mouse vengono visualizzate le descrizioni degli attributi esistenti.
+    // Per ulteriori informazioni, visitare: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "gdb",
+            "request": "launch",
+            "name": "Launch Program (SSH)",
+            "target": "./build/apps/console-application/console-application",
+            "cwd": "${workspaceRoot}",
+            "windows": {
+                "ssh": {
+                    "host": "192.168.1.2",
+                    "cwd": "/home/pi/projects/console-application",
+                    "keyfile": "C:\\Users\\mauri\\.ssh\\id_rsa",
+                    "user": "pi",
+                }
+            },
+            "osx": {
+                "ssh": {
+                    "host": "192.168.1.2",
+                    "cwd": "/home/pi/projects/console-application",
+                    "keyfile": "/Users/maurizioattanasi/.ssh/id_rsa",
+                    "user": "pi",
+                }       
+            },
+            "linux": {
+                "ssh": {
+                    "host": "192.168.1.2",
+                    "cwd": "/home/pi/projects/console-application",
+                    "keyfile": "/Users/maurizioattanasi/.ssh/id_rsa",
+                    "user": "pi",
+                }       
+            },
+            "preLaunchTask": "build"
+        }
+    ]
+}
+```
+
